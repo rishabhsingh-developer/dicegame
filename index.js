@@ -1,20 +1,33 @@
-var image = ["dice1.png" , "dice2.png" , "dice3.png" , "dice4.png" , "dice5.png" , "dice6.png"]
-
-
-
-var randomNumber1 = Math.random();
-var m = Math.floor((randomNumber1*image.length));
-document.querySelector(" .dice-first img").setAttribute("src",image[m]);
-
-var randomNumber2 = Math.random();
-var n = Math.floor((randomNumber2*image.length));
-document.querySelector(" .dice-second img").setAttribute("src",image[n]);
-
-if(m > n){
-    document.querySelector(".container h1").textContent = "player 1 win";
-}else if(m === n){
-    document.querySelector(".container h1").textContent = "draw ";
-}else{
-    document.querySelector(".container h1").textContent = "player 2 win";
+ document.querySelector(".btn1").addEventListener("click",function(){
+    var randomnumber1 = Math.floor( Math.random()*6+1);
     
-}
+    document.querySelector(".dice-1 img").setAttribute("src","dice"+randomnumber1+".png");
+    
+    var randomnumber2 = Math.floor( Math.random()*6+1);
+    
+    document.querySelector(".dice-2 img").setAttribute("src","dice"+randomnumber2+".png");
+    
+    
+    
+    if(randomnumber1 > randomnumber2){
+        document.querySelector("h1").textContent = "player-1 win"
+    }else if(randomnumber1 === randomnumber2){
+        document.querySelector("h1").textContent = " draw"
+    }else{
+        document.querySelector("h1").textContent = "player-2 win"
+    
+    }
+  
+ })
+  
+ 
+   
+    
+
+
+
+
+
+
+    
+
